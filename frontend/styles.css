@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+@import url('https://fonts.googleapis.com/css?family=Tangerine:400,700');
+html * {
+  box-sizing: border-box;
+  font-family: 'Quicksand';
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+strong {
+  font-weight: 700;
+}
