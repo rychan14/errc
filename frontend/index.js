@@ -1,11 +1,12 @@
 import 'index.html'
 import 'styles.css'
 import choo from 'choo'
-import html from 'choo/html'
-import {css} from 'glamor'
 
-import Main from 'Main'
+import Home from 'Home'
+import Events from 'Events'
 import OurStory from 'OurStory'
+import BridalParty from 'BridalParty'
+import Registry from 'Registry'
 import MIA from 'MIA'
 
 const app = choo()
@@ -23,8 +24,11 @@ app.model(
 
 app.router(
   { default: '/404' }
-  , [ [ '/', Main ]
+  , [ [ '/', Home ]
+    , [ '/events', Events ]
     , [ '/story', OurStory ]
+    , [ '/party', BridalParty ]
+    , [ '/registry', Registry ]
     , [ '/404', MIA ]
     ]
 )

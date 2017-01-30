@@ -3,42 +3,54 @@ import {css} from 'glamor'
 
 const header = css(
   { alignItems: 'center'
-  , backgroundColor: 'rgba( 0,0,0, 0.2 )'
+  , backgroundColor: 'rgba( 0,0,0, 0.4 )'
   , border: '2px solid white'
   , borderRadius: '2px'
   , color: 'white'
   , display: 'flex'
   , flexFlow: 'column'
+  , justifyContent: 'center'
+  , minHeight: '30vh'
+  , overflow: 'hidden'
   , padding: '20px'
   , textAlign: 'center'
   , marginBottom: '40px'
-  , maxWidth: '80%'
+  , maxWidth: '95%'
+  , minWidth: '60%'
   }
 )
 const title = css(
   { alignItems: 'center'
   , display: 'flex'
   , fontFamily: 'Tangerine'
-  , fontSize: '90px'
+  , fontSize: '8em'
   , fontWeight: 'bold'
   , marginBottom: '10px'
   , textAlign: 'center'
+  , whiteSpace: 'nowrap'
   }
 )
-const subtitle = css(
+
+const hashtag = css(
   { display: 'block'
-  , fontSize: '35px'
+  , fontSize: '1.4em'
+  , marginBottom: '10px'
+  , maxWidth: '100%'
+  , overflow: 'hidden'
+  , textOverflow: 'ellipsis'
   }
 )
 const date = css(
-  { fontSize: '40px'
+  { display: 'block'
+  , fontSize: '4em'
   , fontWeight: '700'
+  , maxWidth: '100%'
   , whiteSpace: 'nowrap'
   }
 )
 const heart = css(
-  { height: '25px'
-  , width: '25px'
+  { height: '40px'
+  , width: '40px'
   }
 )
 const redHeart = css(
@@ -50,11 +62,18 @@ const redHeart = css(
 const whiteHeart = css(
   { fill: 'white' }
 )
+const text = css(
+  { fontSize: '25px'
+  }
+)
+const address = css(
+  { fontSize: '2.3em'
+  }
+)
 
-export default () => {
+export default (state, prev, send) => {
   return html`
-    <header class=${header}>
-      <a href="/story">click</a>
+    <div class=${header}>
       <h1 class=${title}>
         Erica
         <svg class='${redHeart} ${heart}'>
@@ -65,8 +84,14 @@ export default () => {
         </svg>
         Ryan
       </h1>
-      <p>#ACHANceAtRHOmance</p>
-      <p class=${subtitle}>Come Celebrate With Us On <span class=${date}>June 17, 2017</span></p>
-    </header>
+      <p class=${hashtag}>#ACHANceAtRHOmance</p>
+      <p class=${date}>~June 17, 2017~</p>
+      <p class=${text}>at</p>
+      <address class=${address}>
+        Aviation Vineyards<br />
+        7436 Rainbow Heights Road<br />
+        Temecula, CA 92028<br />
+      </address>
+    </div>
   `
 }

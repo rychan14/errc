@@ -4,17 +4,21 @@ import {css} from 'glamor'
 import NavBar from 'NavBar'
 import NavMenu from 'NavMenu'
 
-const mia = css(
-  { margin: '20px'
+const main = css(
+  {
   }
 )
 export default (state, prev, send) => {
   return html`
-    <div>
+    <div class=${main}>
       ${NavBar(state, prev, send)}
-      <section class=${mia}>
-        <h1>Whoops! This Page doesn't exist</h1>
-        <a href="/">Return to Home</a>
+      <section>
+        <img />
+        <div>
+          <p>
+            It's been a four year journey for us.
+          </p>
+        </div>
       </section>
       ${NavMenu(state, prev, send)}
     </div>
