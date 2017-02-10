@@ -1,6 +1,7 @@
 import Koa from 'koa'
 import send from 'koa-send'
 import Router from 'koa-router'
+import compress from 'koa-compress'
 
 const app = new Koa()
 const router = new Router()
@@ -16,6 +17,10 @@ router.get('/', async (ctx, next) => {
 })
 
 app
+  .use(compress({
+    threshold: 2048,
+    flush: require('zlib').Z_SYNC_FLUSH
+  }))
   .use(async (ctx, next) => {
     const start = new Date()
     await next()

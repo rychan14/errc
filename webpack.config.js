@@ -95,7 +95,6 @@ const frontend =
     ]
   , output:
     { path: __dirname + '/dist/public'
-    // , publicPath: 'public/'
     , filename: 'index.js'
     }
   , resolve:

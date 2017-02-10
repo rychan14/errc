@@ -7,10 +7,18 @@ import Events from 'Events'
 import OurStory from 'OurStory'
 import BridalParty from 'BridalParty'
 import Registry from 'Registry'
+import {css} from 'glamor'
 import MIA from 'MIA'
 
 const app = choo()
 
+export const main = css(
+  { marginLeft: '350px'
+  , '@media(max-width: 1024px)':
+    { marginLeft: '0'
+    }
+  }
+)
 app.model(
   { state:
     { navOpen: false }

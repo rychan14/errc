@@ -1,16 +1,15 @@
 import html from 'choo/html'
 import {css} from 'glamor'
+import {main} from 'index.js'
 
 import NavBar from 'NavBar'
-import NavMenu from 'NavMenu'
 
 export default (state, prev, send) => {
   return html`
-    <div>
+    <div class=${main}>
       ${NavBar(state, prev, send)}
       <section>
       </section>
-      ${NavMenu(state, prev, send)}
     </div>
   `
 }
