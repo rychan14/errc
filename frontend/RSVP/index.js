@@ -7,9 +7,9 @@ const button = css(
   , color: 'white'
   , cursor: 'pointer'
 	, display: 'inline-block'
-  , fontSize: '2em'
+  , fontSize: '1.5em'
   , letterSpacing: '10px'
-  , padding: '10px 45px 10px 50px'
+  , padding: '7px 45px 7px 50px'
 	, textAlign: 'center'
   , textDecoration: 'none'
   , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
@@ -20,8 +20,7 @@ const button = css(
     , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
     }
 	, '@media(max-width: 1024px)':
-		{ fontSize: '1.5em'
-		,	padding: '7px 25px 7px 30px'
+		{ padding: '7px 25px 7px 30px'
 		}
 	, '@media(max-width: 667px)':
 		{ fontSize: '1em'

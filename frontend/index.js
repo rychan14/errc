@@ -5,7 +5,6 @@ import choo from 'choo'
 import Home from 'Home'
 import Events from 'Events'
 import OurStory from 'OurStory'
-import BridalParty from 'BridalParty'
 import Registry from 'Registry'
 import {css} from 'glamor'
 import MIA from 'MIA'
@@ -34,7 +33,6 @@ app.router(
   , [ [ '/', Home ]
     , [ '/events', Events ]
     , [ '/story', OurStory ]
-    , [ '/party', BridalParty ]
     , [ '/registry', Registry ]
     , [ '/404', MIA ]
     ]

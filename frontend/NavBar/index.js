@@ -22,14 +22,11 @@ const navBar = css(
   }
 )
 const menuIcon = css(
-	{ display: 'none'
-	, '@media(max-width: 1024px)':
-		{	display: 'block'
-		,	fill: 'white'
-		, height: '3em'
-		, margin: '0 10px'
-		, width: '3em'
-		}
+	{ display: 'block'
+	,	fill: 'white'
+	, height: '3em'
+	, margin: '0 10px'
+	, width: '3em'
 	, '@media(max-width: 667px)':
 		{	display: 'block'
 		,	fill: 'white'
@@ -83,10 +80,6 @@ const navLink = css(
 		}
 	}
 )
-const rsvpMobileHide = css(
-	{ display: 'none'
-	}
-)
 const rsvpMobileContainer = css(
 	{ display: 'inline-block'
 	,	left: '50%'
@@ -105,9 +98,6 @@ const list =
     }
   , { title: 'Our Story'
     , link: '/story'
-    }
-  , { title: 'Bridal Party'
-    , link: '/party'
     }
   , { title: 'Registry'
     , link: '/registry'
@@ -152,9 +142,13 @@ export default (state, prev, send) => {
 									</li>
 								`
 							})}
-							<li class='${navListItem} ${rsvpMobileHide}'>
-								${RSVP(state, prev, send)}
-							</li>
+							${state.viewport > 1024 ? (
+								html`
+									<li class=${navListItem}>
+										${RSVP(state, prev, send)}
+									</li>
+								`
+							) : null}
 						</ul>
 					`
 				}
