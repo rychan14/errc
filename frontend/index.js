@@ -13,22 +13,21 @@ import MIA from 'MIA'
 const app = choo()
 
 export const main = css(
-  { marginLeft: '350px'
-  , '@media(max-width: 1024px)':
-    { marginLeft: '0'
-    }
-  }
-)
-app.model(
-  { state:
-    { navOpen: false }
-  , reducers:
-    { toggleNav:
-      (state) => ({ navOpen: !state.navOpen })
-    }
+  { backgroundColor: '#f6f6f6'
   }
 )
 
+app.model(
+  { state:
+    { navOpen: false
+		,	viewport: 0
+		}
+  , reducers:
+    { toggleNav: (state) => ({ navOpen: !state.navOpen })
+		, viewportCheck: (state, viewportWidth) => ({ viewport: viewportWidth})
+    }
+  }
+)
 
 app.router(
   { default: '/404' }

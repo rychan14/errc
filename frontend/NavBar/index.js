@@ -3,68 +3,98 @@ import {css} from 'glamor'
 
 import RSVP from 'RSVP'
 
+const openAnim = css.keyframes(
+	{ '0%': { transform: 'scaleY(0)' }
+	, '100%': { transform: 'scaleY(1)' }
+	}
+)
 const navBar = css(
-  { backgroundColor: '#202326'
-  , borderRight: '1px solid #E6E6E6'
+  { backgroundColor: 'transparent'
   , color: '#FFF'
-  , height: '100vh'
   , left: '0'
-  , padding: '20px 0'
+  , padding: '10px 0'
   , position: 'fixed'
-  , top: '0'
-  , width: '350px'
-  , zIndex: '10'
+	,	width: '100%'
+	, zIndex: '10'
   , '@media(max-width: 1024px)':
-    { height: 'auto'
-    , position: 'relative'
-    , width: '100%'
+    { top: '0'
     }
   }
 )
-const title = css(
-  { fontFamily: 'Tangerine'
-  , fontSize: '4em'
-  , fontWeight: 'bold'
-  , marginBottom: '10px'
-  , textAlign: 'center'
-  }
+const menuIcon = css(
+	{ display: 'none'
+	, '@media(max-width: 1024px)':
+		{	display: 'block'
+		,	fill: 'white'
+		, height: '3em'
+		, margin: '0 10px'
+		, width: '3em'
+		}
+	, '@media(max-width: 667px)':
+		{	display: 'block'
+		,	fill: 'white'
+		, height: '1.5em'
+		, margin: '0 10px'
+		, width: '1.5em'
+		}
+	}
 )
-const heart = css(
-  { height: '25px'
-  , width: '25px'
-  }
-)
-const redHeart = css(
-  { fill: '#FFAAAA'
-  , left: '8px'
-  , position: 'relative'
-  , zIndex: '2'
-  }
-)
-const whiteHeart = css(
-  { fill: '#E6E6E6'
-  , position: 'relative'
-  , right: '8px'
-  }
+const navList = css(
+	{ display: 'flex'
+	, height: '100%'
+	, justifyContent: 'space-around'
+	,	width: '100%'
+	, '@media(max-width: 1024px)':
+		{	animation: `${openAnim} 0.5s`
+		,	backgroundColor: 'transparent'
+		,	flexFlow: 'column'
+		, padding: '0 0 10px 0'
+		, transformOrigin: 'top'
+		, zIndex: '-1'
+		}
+	}
 )
 const navListItem = css(
   { cursor: 'pointer'
-  , display: 'block'
+  , display: 'inline-block'
   , textAlign: 'center'
+	, '@media(max-width: 1024px)':
+		{ paddingLeft: '10px'
+		,	textAlign: 'left'
+		}
   }
 )
 const navLink = css(
   { color: '#FFF'
   , cursor: 'pointer'
   , display: 'block'
-  , fontSize: '1.3em'
-  , margin: '20px 0'
+  , fontSize: '1.5em'
+  , padding: '10px 0'
   , textDecoration: 'none'
   , width: '100%'
   , '&:hover':
     { textDecoration: 'underline'
     }
-  }
+	, '@media(max-width: 1024px)':
+		{ fontSize: '1.3em'
+		}
+	, '@media(max-width: 667px)':
+		{ fontSize: '1em'
+		}
+	}
+)
+const rsvpMobileHide = css(
+	{ display: 'none'
+	}
+)
+const rsvpMobileContainer = css(
+	{ display: 'inline-block'
+	,	left: '50%'
+	, margin: '5px 0 0 0'
+	,	position: 'absolute'
+	, top: '0'
+	,	transform: 'translate(-50%)'
+	}
 )
 const list =
   [ { title: 'Home'
@@ -82,28 +112,62 @@ const list =
   , { title: 'Registry'
     , link: '/registry'
     }
+  , { title: 'Accomodations'
+    , link: '/accomodations'
+    }
   ]
 
 export default (state, prev, send) => {
+	const toggle = () => send('toggleNav')
+	const toggleVPCheck = () => send('viewportCheck', window.innerWidth)
+	document.addEventListener('DOMContentLoaded', toggleVPCheck)
+	window.addEventListener('resize', toggleVPCheck)
   return html`
     <nav class=${navBar}>
-      <div class=${title}>
-        Erica
-        <svg class='${redHeart} ${heart}'>
-          <use xlink:href="#icon-heart"/>
-        </svg>
-        <svg class='${whiteHeart} ${heart}'>
-          <use xlink:href="#icon-heart"/>
-        </svg>
-        Ryan
-      </div>
-      ${list.map(({title, link}) => {
-        return html`
-          <li class=${navListItem}>
-            <a class=${navLink} href=${link}>${title}</a>
-          </li>
-        `
-      })}
+			${(() => {
+				if (state.viewport < 1024) {
+					if (state.navOpen) {
+						return html`
+							<svg class=${menuIcon} onclick=${toggle}>
+								<use xlink:href="#icon-cross" />
+							</svg>
+						`
+					} else {
+						return html`
+							<svg class=${menuIcon} onclick=${toggle}>
+								<use xlink:href="#icon-menu" />
+							</svg>
+						`
+					}
+				}
+			})()}
+			${(() => {
+				if (state.navOpen || state.viewport > 1024) {
+					return html`
+						<ul class=${navList}>
+							${list.map(({title, link}) => {
+								return html`
+									<li class=${navListItem}>
+										<a class=${navLink} href=${link}>${title}</a>
+									</li>
+								`
+							})}
+							<li class='${navListItem} ${rsvpMobileHide}'>
+								${RSVP(state, prev, send)}
+							</li>
+						</ul>
+					`
+				}
+			})()}
+			${(() => {
+				if (state.viewport < 1024) {
+					return html`
+						<div class=${rsvpMobileContainer}>
+							${RSVP(state, prev, send)}
+						</div>
+					`
+				}
+			})()}
     </nav>
   `
 }

@@ -1,6 +1,6 @@
 import html from 'choo/html'
 import {css} from 'glamor'
-import bgImgSrc from 'assets/opbg.jpg'
+import RSVP from 'RSVP'
 
 const animIn = css.keyframes(
   { '0%':
@@ -13,20 +13,24 @@ const animIn = css.keyframes(
 )
 const cover = css(
   { animation: `${animIn} 0.3s ease`
-  , backgroundImage: `url(${bgImgSrc})`
-  , backgroundPosition: '79% 100%'
+  , backgroundPosition: 'center'
   , backgroundRepeat: 'no-repeat'
   , backgroundSize: 'cover'
   , height: '95vh'
   , position: 'relative'
+	,	textAlign: 'center'
   , width: '100%'
   }
 )
 const header = css(
-  { backgroundColor: 'rgba( 0,0,0, 0.4 )'
-  , color: 'white'
-  , height: '100%'
-  , padding: '20px 0'
+  { backgroundColor: 'rgba( 0, 0, 0, 0.3 )'
+	,	border: '1px solid white'
+	,	borderRadius: '3px'
+	, display: 'inline-block'
+	,	color: 'white'
+	,	margin: '20px 0 0 0'
+	, maxWidth: '95%'
+  , padding: '20px 200px'
   , textAlign: 'center'
   }
 )
@@ -53,8 +57,7 @@ const address = css(
   }
 )
 const hashtag = css(
-  { display: 'block'
-  , fontSize: '1.4em'
+  { fontSize: '1.4em'
   , margin: '20px 0 0 0'
   }
 )
@@ -71,6 +74,7 @@ export default (state, prev, send) => {
           Temecula, CA 92028<br />
         </address>
         <p class=${hashtag}>Hashtag: <strong>#ACHANceAtRHOmance</strong></p>
+				${RSVP(state, prev, send)}
       </div>
     </section>
   `

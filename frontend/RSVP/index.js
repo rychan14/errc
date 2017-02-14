@@ -2,32 +2,36 @@ import html from 'choo/html'
 import {css} from 'glamor'
 
 const button = css(
-  { backgroundColor: 'rgba( 0, 0, 0, 0.6 )'
-  , border: '1px solid rgba( 0, 0, 0, 0.6 )'
+  { border: '3px solid white'
   , borderRadius: '3px'
   , color: 'white'
   , cursor: 'pointer'
-  , letterSpacing: '10px'
+	, display: 'inline-block'
   , fontSize: '2em'
-  , padding: '10px 50px'
-  , position: 'absolute'
-  , right: '10px'
+  , letterSpacing: '10px'
+  , padding: '10px 45px 10px 50px'
+	, textAlign: 'center'
   , textDecoration: 'none'
-  , top: '50%'
   , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
-  , transform: 'translateY(-50%)'
   , ':hover':
     { backgroundColor: 'white'
-    , color: 'rgba( 0, 0, 0, 0.6 )'
+		, border: '3px solid #FFAAAA'
+    , color: '#FFAAAA'
     , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
     }
-  }
+	, '@media(max-width: 1024px)':
+		{ fontSize: '1.5em'
+		,	padding: '7px 25px 7px 30px'
+		}
+	, '@media(max-width: 667px)':
+		{ fontSize: '1em'
+		,	padding: '5px 15px 5px 20px'
+		}
+	}
 )
 
 export default (state, prev, send) => {
   return html`
-    <a href='https://goo.gl/forms/WiM7LoK9I75CQNS52' class=${button}>
-      RSVP
-    </a>
+    <a href='https://goo.gl/forms/WiM7LoK9I75CQNS52' class=${button}><span>RSVP</span></a>
   `
 }
