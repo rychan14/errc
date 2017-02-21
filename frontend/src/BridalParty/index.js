@@ -109,13 +109,12 @@ const descriptionContainerLeft = css(
 	}
 )
 const descriptionContainerRight = css(
-	{ backgroundColor: colorTertiary
-	, color: colorSecondary
+	{ backgroundColor: colorSecondary
+	, color: colorPrimary
 	,	padding: '80px 0 80px 80px'
 	,	textAlign: 'left'
 	, '@media(max-width: 1024px)':
-		{ backgroundColor: colorTertiary
-		,	padding: '80px 50px'
+		{ padding: '80px 50px'
 		}
 	, '@media(max-width: 667px)':
 		{ backgroundColor: colorSecondary

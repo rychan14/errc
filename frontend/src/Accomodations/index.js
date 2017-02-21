@@ -1,6 +1,7 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {
+	colorSecondary,
 	content,
 	cover,
 	overlay
@@ -8,12 +9,18 @@ import {
 import NavBar from 'src/NavBar'
 
 const accomodations = css(
-	{ left: '50%'
+	{ color: colorSecondary
+	, fontSize: '2em'
+	,	left: '50%'
 	,	position: 'absolute'
 	, top: '50%'
 	, transform: 'translate(-50%, -50%)'
+	, '@media(max-width:667px)':
+		{ fontSize: '1.2em'
+		}
 	}
 )
+
 export default (state, prev, send) => {
   return html`
     <div>
@@ -22,9 +29,7 @@ export default (state, prev, send) => {
 				<div class=${overlay}></div>
 				<div class=${content}>
 					<div class=${accomodations}>
-						<p>
-							Check back later for hotel recommendations =D
-						</p>
+						<p>Please check back later as we are looking into getting rides to and from San Diego airport (SAN) and discounted rates for your accomodations</p>
 					</div>
 				</div>
       </section>
