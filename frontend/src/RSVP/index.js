@@ -1,10 +1,11 @@
 import html from 'choo/html'
+import {colorPrimary, colorTertiary} from 'src'
 import {css} from 'glamor'
 
 const button = css(
-  { border: '3px solid white'
+  { border: `3px solid ${colorTertiary}`
   , borderRadius: '3px'
-  , color: 'white'
+  , color: colorTertiary
   , cursor: 'pointer'
 	, display: 'inline-block'
   , fontSize: '1.5em'
@@ -14,9 +15,9 @@ const button = css(
   , textDecoration: 'none'
   , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
   , ':hover':
-    { backgroundColor: 'white'
-		, border: '3px solid #FFAAAA'
-    , color: '#FFAAAA'
+    { backgroundColor: colorTertiary
+		, border: '3px solid transparent'
+    , color: colorPrimary
     , transition: 'background-color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1), color 100ms cubic-bezier(0.1, 0.7, 1.0, 0.1)'
     }
 	, '@media(max-width: 1024px)':

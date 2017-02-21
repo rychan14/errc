@@ -1,6 +1,6 @@
 import html from 'choo/html'
 import {css} from 'glamor'
-import RSVP from 'RSVP'
+import RSVP from 'src/RSVP'
 
 const animIn = css.keyframes(
   { '0%':

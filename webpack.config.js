@@ -26,6 +26,7 @@ const common =
       }
     ) ]
   , module:
+//	{ module:
     { rules:
       [ { test: /\.js$/
         , exclude: '/node_modules/'
@@ -98,7 +99,7 @@ const frontend =
     , filename: 'index.js'
     }
   , resolve:
-    { modules: [path.join(__dirname, 'frontend'), 'node_modules']
+    { modules: [path.resolve(__dirname, 'frontend'), 'node_modules']
     }
   }
 

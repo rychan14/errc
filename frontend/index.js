@@ -2,28 +2,26 @@ import 'index.html'
 import 'styles.css'
 import choo from 'choo'
 
-import Home from 'Home'
-import Events from 'Events'
-import OurStory from 'OurStory'
-import Registry from 'Registry'
-import {css} from 'glamor'
-import MIA from 'MIA'
+import Home from 'src/Home'
+import WeddingEvents from 'src/WeddingEvents'
+import OurStory from 'src/OurStory'
+import Registry from 'src/Registry'
+import BridalParty from 'src/BridalParty'
+import Accomodations from 'src/Accomodations'
+import MIA from 'src/MIA'
 
 const app = choo()
-
-export const main = css(
-  { backgroundColor: '#f6f6f6'
-  }
-)
 
 app.model(
   { state:
     { navOpen: false
 		,	viewport: 0
+		, countdown: null
 		}
   , reducers:
     { toggleNav: (state) => ({ navOpen: !state.navOpen })
-		, viewportCheck: (state, viewportWidth) => ({ viewport: viewportWidth})
+		, viewportCheck: (state, viewportWidth) => ({ viewport: viewportWidth })
+		, countdown: (state, countdown) => ({ countdown: countdown })
     }
   }
 )
@@ -31,9 +29,11 @@ app.model(
 app.router(
   { default: '/404' }
   , [ [ '/', Home ]
-    , [ '/events', Events ]
+    , [ '/events', WeddingEvents]
     , [ '/story', OurStory ]
     , [ '/registry', Registry ]
+    , [ '/party', BridalParty ]
+    , [ '/accomodations', Accomodations ]
     , [ '/404', MIA ]
     ]
 )

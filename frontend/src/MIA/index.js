@@ -1,8 +1,7 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {main} from 'index.js'
-
-import NavBar from 'NavBar'
+import NavBar from 'src/NavBar'
 
 const mia = css(
   { margin: '20px'

@@ -1,19 +1,24 @@
 import html from 'choo/html'
 import {css} from 'glamor'
-
-import RSVP from 'RSVP'
+import {
+	colorDark,
+	colorPrimary,
+	colorSecondary,
+	colorTertiary
+} from 'src'
+import RSVP from 'src/RSVP'
 
 const openAnim = css.keyframes(
-	{ '0%': { transform: 'scaleY(0)' }
-	, '100%': { transform: 'scaleY(1)' }
+	{ '0%': { transform: 'translateY(-100%)' }
+	, '100%': { transform: 'translateY(0)' }
 	}
 )
 const navBar = css(
-  { backgroundColor: 'transparent'
-  , color: '#FFF'
+  { color: colorSecondary
   , left: '0'
   , padding: '10px 0'
   , position: 'fixed'
+	, top: '0'
 	,	width: '100%'
 	, zIndex: '10'
   , '@media(max-width: 1024px)':
@@ -22,16 +27,14 @@ const navBar = css(
   }
 )
 const menuIcon = css(
-	{ display: 'block'
+	{ cursor: 'pointer'
+	,	display: 'block'
 	,	fill: 'white'
 	, height: '3em'
 	, margin: '0 10px'
 	, width: '3em'
 	, '@media(max-width: 667px)':
-		{	display: 'block'
-		,	fill: 'white'
-		, height: '1.5em'
-		, margin: '0 10px'
+		{	height: '1.5em'
 		, width: '1.5em'
 		}
 	}
@@ -43,11 +46,17 @@ const navList = css(
 	,	width: '100%'
 	, '@media(max-width: 1024px)':
 		{	animation: `${openAnim} 0.5s`
-		,	backgroundColor: 'transparent'
+		,	backgroundColor: colorPrimary
 		,	flexFlow: 'column'
-		, padding: '0 0 10px 0'
-		, transformOrigin: 'top'
+		, padding: '68px 0 10px 0'
+		, position: 'relative'
+		, top: '-68px'
+		, transformOrigin: 'left'
 		, zIndex: '-1'
+		}
+	, '@media(max-width: 667px)':
+		{ padding: '34px 0 10px 0'
+		, top: '-34px'
 		}
 	}
 )
@@ -62,7 +71,7 @@ const navListItem = css(
   }
 )
 const navLink = css(
-  { color: '#FFF'
+  { color: colorSecondary
   , cursor: 'pointer'
   , display: 'block'
   , fontSize: '1.5em'
@@ -80,13 +89,21 @@ const navLink = css(
 		}
 	}
 )
+
+const active = css(
+	{ textDecoration: 'underline'
+	}
+)
 const rsvpMobileContainer = css(
 	{ display: 'inline-block'
 	,	left: '50%'
-	, margin: '5px 0 0 0'
+	, marginTop: '10px'
 	,	position: 'absolute'
 	, top: '0'
-	,	transform: 'translate(-50%)'
+	,	transform: 'translate(-50%, 0)'
+	, '@media(max-width: 667px)':
+		{ marginTop: '4px'
+		}
 	}
 )
 const list =
@@ -105,9 +122,12 @@ const list =
   , { title: 'Accomodations'
     , link: '/accomodations'
     }
+  , { title: 'Bridal Party'
+    , link: '/party'
+    }
   ]
 
-export default (state, prev, send) => {
+export default (state, prev, send, {isAlt = false}) => {
 	const toggle = () => send('toggleNav')
 	const toggleVPCheck = () => send('viewportCheck', window.innerWidth)
 	document.addEventListener('DOMContentLoaded', toggleVPCheck)
@@ -115,7 +135,7 @@ export default (state, prev, send) => {
   return html`
     <nav class=${navBar}>
 			${(() => {
-				if (state.viewport < 1024) {
+				if (state.viewport <= 1024) {
 					if (state.navOpen) {
 						return html`
 							<svg class=${menuIcon} onclick=${toggle}>
@@ -138,11 +158,11 @@ export default (state, prev, send) => {
 							${list.map(({title, link}) => {
 								return html`
 									<li class=${navListItem}>
-										<a class=${navLink} href=${link}>${title}</a>
+										<a onclick=${toggle} class='${navLink} ${state.location.pathname === link ? active : ''}' href=${link}>${title}</a>
 									</li>
 								`
 							})}
-							${state.viewport > 1024 ? (
+							${state.viewport >= 1024 ? (
 								html`
 									<li class=${navListItem}>
 										${RSVP(state, prev, send)}
