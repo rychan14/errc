@@ -1,12 +1,63 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {
+	colorDark,
+	colorPrimary,
+	colorSecondary,
+	colorTertiary,
 	content,
 	cover,
 	overlay
 } from 'src'
 import NavBar from 'src/NavBar'
 
+const events = css(
+	{ color: colorSecondary
+	,	marginTop: '50px'
+	, textAlign: 'center'
+	}
+)
+const venue = css(
+	{ textDecoration: 'underline'
+	}
+)
+const address = css(
+	{	color: colorSecondary
+	, fontStyle: 'normal'
+	, margin: '20px 0'
+	, '& span':
+		{ display: 'block'
+		}
+	}
+)
+const addressName = css(
+	{ fontSize: '2em'
+	}
+)
+const addressStreet = css(
+	{ fontSize: '1.8em'
+	}
+)
+const addressCity = css(
+	{ fontSize: '1.8em'
+	}
+)
+const mapsLink = css(
+	{ fontSize: '1.5em'
+	}
+)
+const date = css(
+	{ display: 'block'
+	, fontSize: '1.5em'
+	}
+)
+const eventBlock = css(
+	{ fontSize: '1.5em'
+	}
+)
+const event = css(
+	{}
+)
 export default (state, prev, send) => {
   return html`
     <div>
@@ -14,23 +65,21 @@ export default (state, prev, send) => {
       <section class=${cover}>
 				<div class=${overlay}></div>
 				<div class=${content}>
+					<div class=${events}>
+						<p class=${venue}>Venue</p>
+						<address class=${address}>
+							<span class=${addressName}>Aviation Vineyards</span>
+							<span class=${addressStreet}>7436 Rainbow Heights Road</span>
+							<span class=${addressCity}>Temecula, CA 92028</span>
+							<a class=${mapsLink} href="https://www.google.com/maps/place/7436+Rainbow+Heights+Rd,+Fallbrook,+CA+92028/@33.4216689,-117.1162958,17z/data=!3m1!4b1!4m5!3m4!1s0x80db81107aed759b:0xa0382894f9d292f0!8m2!3d33.4216689!4d-117.1141071">(Google Map)</a>
+						</address>
+						<date class=${date}>June 17, 2017</date>
+						<div class=${eventBlock}>
+							<p class=${event}>5:00 P.M - Ceremony & Reception</p>
+						</div>
+					</div>
 				</div>
       </section>
     </div>
   `
 }
-		//	<script>
-		//		function initMap() {
-		//			let location = {lat: 33.421604, lng: -117.113606}
-		//			let map = new google.maps.Map(document.getElementById('map'), {
-		//				center: location,
-		//				zoom: 10
-		//			})
-		//			let marker = new google.maps.Marker({
-		//				position: location,
-		//				map: map,
-		//				title: 'Aviation Vineyards'
-		//			})
-		//		}
-		//	</script>
-		// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALKqMk6YOCxhJC521v3Eeoie8BTqB1Ndg&callback=initMap" async defer></script>

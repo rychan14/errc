@@ -1,6 +1,6 @@
 import html from 'choo/html'
 import {css} from 'glamor'
-import {main, colorPrimary, colorTertiary} from 'src'
+import {main, colorPrimary, colorSecondary, colorTertiary} from 'src'
 import headImg from 'assets/opbg2.jpg'
 
 const headImgContainer = css(
@@ -19,7 +19,7 @@ const gradient = css(
 	}
 )
 const countdownContainer = css(
-	{ color: colorTertiary
+	{ color: colorSecondary
 	, fontSize: '3em'
 	,	left: '50%'
 	, padding: '20px'
@@ -51,7 +51,7 @@ const bounce = css.keyframes(
 const arrowIcon = css(
 	{ animation: `${bounce} 2s infinite`
 	,	bottom: '10px'
-	,	fill: colorTertiary
+	,	fill: colorSecondary
 	,	height: '50px'
 	, left: '50%'
 	, position: 'absolute'

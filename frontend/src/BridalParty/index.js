@@ -41,12 +41,10 @@ const personContainer = css(
 	}
 )
 const personContainerRight = css(
-	{ backgroundColor: colorPrimary
-	}
+	{}
 )
 const personContainerLeft = css(
-	{ backgroundColor: 'transparent'
-	}
+	{}
 )
 const imageContainer = css(
 	{ height: '40vh'
@@ -95,11 +93,15 @@ const descriptionContainer = css(
 	}
 )
 const descriptionContainerLeft = css(
-	{ color: colorTertiary
-	,	padding: '80px'
+	{ backgroundColor: colorPrimary
+	,	color: colorSecondary
+	,	padding: '80px 80px 80px 0'
 	,	textAlign: 'right'
+	, '@media(max-width: 1024px)':
+		{ padding: '80px 50px'
+		}
 	, '@media(max-width: 667px)':
-		{ backgroundColor: colorTertiary
+		{ backgroundColor: colorSecondary
 		, color: colorDark
 		,	padding: '20px 20px 20px 0'
 		,	order: '2'
@@ -107,12 +109,16 @@ const descriptionContainerLeft = css(
 	}
 )
 const descriptionContainerRight = css(
-	{ backgroundColor: colorPrimary
+	{ backgroundColor: colorTertiary
 	, color: colorSecondary
-	,	padding: '80px'
+	,	padding: '80px 0 80px 80px'
 	,	textAlign: 'left'
-	, '@media(max-width: 667px)':
+	, '@media(max-width: 1024px)':
 		{ backgroundColor: colorTertiary
+		,	padding: '80px 50px'
+		}
+	, '@media(max-width: 667px)':
+		{ backgroundColor: colorSecondary
 		, color: colorDark
 		,	padding: '20px 0 20px 20px'
 		}

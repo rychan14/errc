@@ -35,7 +35,7 @@ export const overlay = css(
 	}
 )
 export const content = css(
-	{ maxHeight: '100%'
+	{ height: '100%'
 	, overflow: 'scroll'
 	,	padding: '50px'
 	,	position: 'relative'
@@ -48,11 +48,11 @@ export const colorPrimary = '#C0C0C0'
 // export const colorPrimary = '#191953'
 export const colorSecondary = '#FFF'
 // export const colorSecondary = '#FFAAAA'
-export const colorTertiary = '#FFF'
+export const colorTertiary = '#FFAAAA'
 export const colorDark = '#363636'
 
 export const header = css(
-	{ color: colorTertiary
+	{ color: colorSecondary
 	,	margin: '20px 0'
 	,	textAlign: 'center'
 	}
