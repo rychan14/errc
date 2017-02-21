@@ -24,7 +24,7 @@ const venue = css(
 const address = css(
 	{	color: colorSecondary
 	, fontStyle: 'normal'
-	, margin: '20px 0'
+	, margin: '10px 0'
 	, '& span':
 		{ display: 'block'
 		}
@@ -44,6 +44,13 @@ const addressCity = css(
 )
 const mapsLink = css(
 	{ fontSize: '1.5em'
+	}
+)
+const border = css(
+	{ borderBottom: `1px solid ${colorSecondary}`
+	,	height: '1px'
+	, margin: '20px auto'
+	, width: '150px'
 	}
 )
 const date = css(
@@ -73,6 +80,7 @@ export default (state, prev, send) => {
 							<span class=${addressCity}>Temecula, CA 92028</span>
 							<a class=${mapsLink} href="https://www.google.com/maps/place/7436+Rainbow+Heights+Rd,+Fallbrook,+CA+92028/@33.4216689,-117.1162958,17z/data=!3m1!4b1!4m5!3m4!1s0x80db81107aed759b:0xa0382894f9d292f0!8m2!3d33.4216689!4d-117.1141071">(Google Map)</a>
 						</address>
+						<div class=${border}></div>
 						<date class=${date}>June 17, 2017</date>
 						<div class=${eventBlock}>
 							<p class=${event}>5:00 P.M - Ceremony & Reception</p>
