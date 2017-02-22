@@ -98,7 +98,7 @@ export default (state, prev, send) => {
 						<address class=${address}>
 							<span class=${addressName}>Aviation Vineyards</span>
 							<span class=${addressStreet}>7436 Rainbow Heights Road</span>
-							<span class=${addressCity}>Temecula, CA 92028</span>
+							<span class=${addressCity}>Fallbrook, CA 92028</span>
 							<a class=${mapsLink} href="https://www.google.com/maps/place/7436+Rainbow+Heights+Rd,+Fallbrook,+CA+92028/@33.4216689,-117.1162958,17z/data=!3m1!4b1!4m5!3m4!1s0x80db81107aed759b:0xa0382894f9d292f0!8m2!3d33.4216689!4d-117.1141071">(Google Map)</a>
 						</address>
 					</div>
