@@ -29,13 +29,14 @@ const countdownContainer = css(
 	, transform: 'translateX(-50%)'
 	, width: '80%'
 	, '@media(max-width: 667px)':
-		{ fontSize: '2em'
+		{ fontSize: '1.8em'
 		, width: '100%'
 		}
 	}
 )
 const countdown = css(
-	{}
+	{ whiteSpace: 'nowrap'
+	}
 )
 const bounce = css.keyframes(
 	{ '0%':

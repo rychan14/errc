@@ -7,7 +7,7 @@ import WeddingEvents from 'src/WeddingEvents'
 import OurStory from 'src/OurStory'
 import Registry from 'src/Registry'
 import BridalParty from 'src/BridalParty'
-import Accomodations from 'src/Accomodations'
+import Accommodations from 'src/Accommodations'
 import MIA from 'src/MIA'
 
 const app = choo()
@@ -33,7 +33,7 @@ app.router(
     , [ '/story', OurStory ]
     , [ '/registry', Registry ]
     , [ '/party', BridalParty ]
-    , [ '/accomodations', Accomodations ]
+    , [ '/accommodations', Accommodations ]
     , [ '/404', MIA ]
     ]
 )

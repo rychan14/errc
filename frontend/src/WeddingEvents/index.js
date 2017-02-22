@@ -13,12 +13,14 @@ import NavBar from 'src/NavBar'
 
 const events = css(
 	{ color: colorSecondary
-	,	marginTop: '50px'
+	, left: '50%'
+	, position: 'relative'
 	, textAlign: 'center'
-	}
-)
-const venue = css(
-	{ textDecoration: 'underline'
+	, top: '40%'
+	, transform: 'translate(-50%, -50%)'
+	, '@media(max-width: 1024px)':
+		{ top: '50%'
+		}
 	}
 )
 const address = css(
@@ -31,19 +33,31 @@ const address = css(
 	}
 )
 const addressName = css(
-	{ fontSize: '2em'
+	{ fontSize: '2.5em'
+	, '@media(max-width: 667px)':
+		{ fontSize:  '1.8em'
+		}
 	}
 )
 const addressStreet = css(
-	{ fontSize: '1.8em'
+	{ fontSize: '2.5em'
+	, '@media(max-width: 667px)':
+		{ fontSize:  '1.8em'
+		}
 	}
 )
 const addressCity = css(
-	{ fontSize: '1.8em'
+	{ fontSize: '2.5em'
+	, '@media(max-width: 667px)':
+		{ fontSize:  '1.8em'
+		}
 	}
 )
 const mapsLink = css(
-	{ fontSize: '1.5em'
+	{ fontSize: '2em'
+	, '@media(max-width: 667px)':
+		{ fontSize:  '1.5em'
+		}
 	}
 )
 const border = css(
@@ -55,7 +69,10 @@ const border = css(
 )
 const date = css(
 	{ display: 'block'
-	, fontSize: '1.5em'
+	, fontSize: '3em'
+	, '@media(max-width: 667px)':
+		{ fontSize:  '2em'
+		}
 	}
 )
 const eventBlock = css(
@@ -73,7 +90,7 @@ export default (state, prev, send) => {
 				<div class=${overlay}></div>
 				<div class=${content}>
 					<div class=${events}>
-						<p class=${venue}>Venue</p>
+						<date class=${date}>June 17, 2017</date>
 						<address class=${address}>
 							<span class=${addressName}>Aviation Vineyards</span>
 							<span class=${addressStreet}>7436 Rainbow Heights Road</span>
@@ -81,7 +98,6 @@ export default (state, prev, send) => {
 							<a class=${mapsLink} href="https://www.google.com/maps/place/7436+Rainbow+Heights+Rd,+Fallbrook,+CA+92028/@33.4216689,-117.1162958,17z/data=!3m1!4b1!4m5!3m4!1s0x80db81107aed759b:0xa0382894f9d292f0!8m2!3d33.4216689!4d-117.1141071">(Google Map)</a>
 						</address>
 						<div class=${border}></div>
-						<date class=${date}>June 17, 2017</date>
 						<div class=${eventBlock}>
 							<p class=${event}>5:00 P.M - Ceremony & Reception</p>
 						</div>

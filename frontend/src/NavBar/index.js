@@ -119,15 +119,15 @@ const list =
   , { title: 'Registry'
     , link: '/registry'
     }
-  , { title: 'Accomodations'
-    , link: '/accomodations'
+  , { title: 'Accommodations'
+    , link: '/accommodations'
     }
   , { title: 'Bridal Party'
     , link: '/party'
     }
   ]
 
-export default (state, prev, send, {isAlt = false}) => {
+export default (state, prev, send) => {
 	const toggle = () => send('toggleNav')
 	const toggleVPCheck = () => send('viewportCheck', window.innerWidth)
 	document.addEventListener('DOMContentLoaded', toggleVPCheck)

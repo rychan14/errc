@@ -8,7 +8,7 @@ import {
 } from 'src'
 import NavBar from 'src/NavBar'
 
-const accomodations = css(
+const accommodations = css(
 	{ color: colorSecondary
 	, fontSize: '2em'
 	,	left: '50%'
@@ -28,8 +28,8 @@ export default (state, prev, send) => {
       <section class=${cover}>
 				<div class=${overlay}></div>
 				<div class=${content}>
-					<div class=${accomodations}>
-						<p>Please check back later as we are looking into getting rides to and from San Diego airport (SAN) and discounted rates for your accomodations</p>
+					<div class=${accommodations}>
+						<p>Please check back later as we are looking into getting rides to and from San Diego airport (SAN) and discounted rates for your accommodations</p>
 					</div>
 				</div>
       </section>
