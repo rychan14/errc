@@ -14,7 +14,15 @@ import Amazon from 'assets/Amazon.jpg'
 import NavBar from 'src/NavBar'
 
 const registry = css(
-	{}
+	{ left: '50%'
+	, margin: '50px auto'
+	,	position: 'absolute'
+	, top: '40%'
+	, transform: 'translate(-50%, -50%)'
+	, '@media(max-width: 667px)':
+		{ top: '50%'
+		}
+	}
 )
 const registryList = css(
 	{ marginTop: '30px'
