@@ -25,7 +25,7 @@ export const cover = css(
 	}
 )
 export const overlay = css(
-	{	backgroundImage: 'radial-gradient(ellipse, #FFF 30%, #000 130%)'
+	{	backgroundImage: 'radial-gradient(ellipse, #000 30%, #000 130%)'
 	, height: '100%'
 	, left: '0'
 	, opacity: '0.6'
@@ -45,9 +45,7 @@ export const content = css(
 	}
 )
 export const colorPrimary = '#C0C0C0'
-// export const colorPrimary = '#191953'
 export const colorSecondary = '#FFF'
-// export const colorSecondary = '#FFAAAA'
 export const colorTertiary = '#FFAAAA'
 export const colorDark = '#363636'
 

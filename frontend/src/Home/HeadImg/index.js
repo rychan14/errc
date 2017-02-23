@@ -1,7 +1,7 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {main, colorPrimary, colorSecondary, colorTertiary} from 'src'
-import headImg from 'assets/opbg2.jpg'
+import headImg from 'assets/opbg.jpg'
 
 const headImgContainer = css(
 	{	backgroundImage: `url(${headImg})`
