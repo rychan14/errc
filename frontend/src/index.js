@@ -20,7 +20,7 @@ export const cover = css(
 	, backgroundPosition: '50% 60%'
 	, backgroundSize: 'cover'
 	,	height: '100vh'
-	, overflow: 'scroll'
+	, overflow: 'auto'
 	, position: 'relative'
 	}
 )
@@ -36,7 +36,7 @@ export const overlay = css(
 )
 export const content = css(
 	{ height: '100%'
-	, overflow: 'scroll'
+	, overflow: 'auto'
 	,	padding: '50px'
 	,	position: 'relative'
 	, '@media(max-width: 667px)':

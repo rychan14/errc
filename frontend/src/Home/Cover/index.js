@@ -1,20 +1,10 @@
 import html from 'choo/html'
 import {css} from 'glamor'
-import {main, cover, colorDark} from 'src'
+import {main, cover, overlay, colorSecondary} from 'src'
 import bgImageSrc from 'assets/blurbg.jpg'
 
-const overlay = css(
-	{	backgroundImage: 'radial-gradient(ellipse, #FFF 30%, #000 130%)'
-	, height: '100%'
-	, left: '0'
-	, opacity: '0.6'
-	, position: 'absolute'
-	, top: '0'
-	, width: '100%'
-	}
-)
 const description = css(
-	{ color: colorDark
+	{ color: colorSecondary
 	,	fontSize: '2em'
 	,	left: '50%'
 	, position: 'absolute'

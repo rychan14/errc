@@ -13,13 +13,10 @@ import NavBar from 'src/NavBar'
 
 const events = css(
 	{ color: colorSecondary
-	, left: '50%'
-	, position: 'relative'
+	, marginTop: '100px'
 	, textAlign: 'center'
-	, top: '40%'
-	, transform: 'translate(-50%, -50%)'
-	, '@media(max-width: 1024px)':
-		{ top: '50%'
+	, '@media(max-width: 667px)':
+		{ marginTop: '50px'
 		}
 	}
 )
@@ -54,7 +51,8 @@ const addressCity = css(
 	}
 )
 const mapsLink = css(
-	{ fontSize: '2em'
+	{ color: colorTertiary
+	,	fontSize: '2em'
 	, '@media(max-width: 667px)':
 		{ fontSize:  '1.5em'
 		}
