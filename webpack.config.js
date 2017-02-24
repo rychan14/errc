@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let nodeModules = {}
 fs.readdirSync('node_modules')
@@ -10,21 +11,30 @@ fs.readdirSync('node_modules')
 const common =
   { plugins:
     [ new webpack.optimize.AggressiveMergingPlugin()
-    , new webpack.optimize.UglifyJsPlugin(
-      { compress:
-        { unused: true
-        , dead_code: true
-        , warnings: false
-        }
-      , comments: false
-      , minimize: false
-      } )
-    , new webpack.DefinePlugin(
-      { 'process.env':
-        { 'NODE_ENV': JSON.stringify('production')
-        }
-      }
-    ) ]
+    , new webpack.optimize.UglifyJsPlugin
+			( { compress:
+					{ unused: true
+					, dead_code: true
+					, warnings: false
+					}
+				, comments: false
+				, minimize: false
+				}
+			)
+    , new webpack.DefinePlugin
+			( { 'process.env':
+					{ 'NODE_ENV': JSON.stringify('production')
+					}
+				}
+			)
+		, new CleanWebpackPlugin
+			(	['dist']
+				,	{
+					verbose: true,
+					dry: false,
+				}
+			)
+		]
   , module:
 //	{ module:
     { rules:
@@ -52,7 +62,16 @@ const common =
             }
           ]
         }
-      , { test: [/\.(jpg|ico)$/]
+			, { test: [/\.ico$/]
+        , use:
+          [ { loader: 'file-loader'
+            , options:
+              { name: '[name].[ext]'
+              }
+            }
+          ]
+        }
+      , { test: [/\.jpg$/]
         , use:
           [ { loader: 'file-loader'
             , options:
