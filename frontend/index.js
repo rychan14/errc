@@ -1,5 +1,6 @@
 import 'index.html'
 import 'styles.css'
+import 'assets/favicon.ico'
 import choo from 'choo'
 
 import Home from 'src/Home'
