@@ -52,7 +52,7 @@ const common =
             }
           ]
         }
-      , { test: [/\.jpg$/]
+      , { test: [/\.(jpg|ico)$/]
         , use:
           [ { loader: 'file-loader'
             , options:
