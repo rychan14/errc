@@ -11,6 +11,7 @@ import {
 import CrateAndBarrel from 'assets/CrateAndBarrel.jpg'
 import BedAndBath from 'assets/BedAndBath.jpg'
 import Amazon from 'assets/Amazon.jpg'
+import BestBuy from 'assets/BestBuy.jpg'
 import NavBar from 'src/NavBar'
 
 const registry = css(
@@ -46,6 +47,10 @@ const bedBathContainer = css(
 	}
 )
 const amazonContainer = css(
+	{ padding: '10px 0 0 0'
+	}
+)
+const bestBuyContainer = css(
 	{ padding: '10px 0 0 0'
 	}
 )
@@ -86,6 +91,11 @@ export default (state, prev, send) => {
 							<div class='${container} ${amazonContainer}'>
 								<a class=${link} href='https://www.amazon.com/wedding/erica-rho-ryan-chan-fallbrook-june-2017/registry/FWEVY4RV9IPX'>
 									<img class=${logo} src=${Amazon} />
+								</a>
+							</div>
+							<div class='${container} ${bestBuyContainer}'>
+								<a class=${link} href='https://www-ssl.bestbuy.com/profile/list/searchviewlist?listType=weddingregistrylist&listId=57e98485-fa5e-11e6-bfbc-0050568f25b9#!/view/'>
+									<img class=${logo} src=${BestBuy} />
 								</a>
 							</div>
 						</div>
