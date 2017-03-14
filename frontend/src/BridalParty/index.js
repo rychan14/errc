@@ -163,7 +163,7 @@ const people =
 		, role: 'Groomsman'
 		}
 	, { src: Annie
-		, name: 'Annie Coffman'
+		, name: 'Annie Cauffman'
 		, role: 'Bridesmaid'
 		}
 	, { src: Calvin
