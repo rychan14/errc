@@ -20,6 +20,10 @@ const accommodations = css(
 		}
 	}
 )
+const paragraph = css(
+	{ marginBottom: '20px'
+	}
+)
 
 export default (state, prev, send) => {
   return html`
@@ -29,7 +33,19 @@ export default (state, prev, send) => {
 				<div class=${overlay}></div>
 				<div class=${content}>
 					<div class=${accommodations}>
-						<p>Please check back later as we are looking into getting rides to and from San Diego airport (SAN) and discounted rates for your accommodations</p>
+						<p class=${paragraph}>
+							Check out these hotels nearby should you need accomodations:
+						</p>
+						<p class=${paragraph}>
+							Quality Inn Fallbrook I-15<br>
+							3135 Old Hwy 395, Fallbrook, CA 92028<br>
+							~$123
+						</p>
+						<p class=${paragraph}>
+							Ramada Temecula Old Town<br>
+							28980 Old Town Front St, Temecula, CA 92590<br>
+							~$192
+						</p>
 					</div>
 				</div>
       </section>
