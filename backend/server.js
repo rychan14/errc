@@ -5,6 +5,7 @@ import compress from 'koa-compress'
 
 const app = new Koa()
 const router = new Router()
+const port = process.env.PORT || 3000
 
 router.get('/(.*)', async (ctx, next) => {
   await send(ctx, 'index.html', {root: 'dist/public/'})
@@ -33,6 +34,6 @@ app
     await next()
   })
 
-app.listen(80, () => {
-  console.log('listening on 80')
+app.listen(port, () => {
+	console.log(`listening on ${port}`)
 })
