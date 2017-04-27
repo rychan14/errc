@@ -1,11 +1,11 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {main, colorPrimary, colorSecondary, colorTertiary} from 'src'
-import headImg from 'assets/opbg.jpg'
+import home from 'assets/Optimized-home.jpg'
 
 const headImgContainer = css(
-	{	backgroundImage: `url(${headImg})`
-	, backgroundPosition: '50% 60%'
+	{	backgroundImage: `url(${home})`
+	, backgroundPosition: '50% 0%'
 	, backgroundSize: 'cover'
 	,	height: '100vh'
 	, overflow: 'hidden'
@@ -30,6 +30,7 @@ const countdownContainer = css(
 	, width: '80%'
 	, '@media(max-width: 667px)':
 		{ fontSize: '1.8em'
+		, top: '70%'
 		, width: '100%'
 		}
 	}

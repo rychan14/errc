@@ -1,7 +1,6 @@
 import html from 'choo/html'
 import {css} from 'glamor'
 import {main, cover, overlay, colorSecondary} from 'src'
-import bgImageSrc from 'assets/blurbg.jpg'
 
 const description = css(
 	{ color: colorSecondary

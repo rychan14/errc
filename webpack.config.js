@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let nodeModules = {}
 fs.readdirSync('node_modules')
@@ -27,13 +27,13 @@ const common =
 					}
 				}
 			)
-		, new CleanWebpackPlugin
-			(	['dist']
-				,	{
-					verbose: true,
-					dry: false,
-				}
-			)
+		// , new CleanWebpackPlugin
+		// 	(	['dist']
+		// 		,	{
+		// 			verbose: true,
+		// 			dry: false,
+		// 		}
+		// 	)
 		]
   , module:
 //	{ module:

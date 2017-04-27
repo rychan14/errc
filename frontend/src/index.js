@@ -1,5 +1,5 @@
 import {css} from 'glamor'
-import bgImageSrc from 'assets/blurbg.jpg'
+import mainBg from 'assets/Optimized-mainbg.jpg'
 const fadeIn = css.keyframes(
 	{ '0%': { opacity: '0.7' }
 	, '100%': { opacity: '1' }
@@ -16,10 +16,10 @@ export const main = css(
   }
 )
 export const cover = css(
-	{ backgroundImage: `url(${bgImageSrc})`
-	, backgroundPosition: '50% 60%'
+	{ backgroundImage: `url(${mainBg})`
+	, backgroundPosition: '50% 40%'
 	, backgroundSize: 'cover'
-	,	height: '100vh'
+	, height: '100vh'
 	, overflow: 'auto'
 	, position: 'relative'
 	}

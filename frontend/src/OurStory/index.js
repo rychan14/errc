@@ -6,21 +6,21 @@ import {
 	cover,
 	overlay
 } from 'src'
-import walking from 'assets/walking.jpg'
+import journey from 'assets/journey.jpg'
 import NavBar from 'src/NavBar'
 
 const ourStory = css(
-	{	color: colorSecondary
-	,	marginTop: '20px'
+	{ color: colorSecondary
+	, marginTop: '20px'
 	, padding: '0 10px'
 	, '@media(max-width: 667px)':
-		{ marginTop: '40px'
-		}
+	  { marginTop: '40px'
+	  }
 	}
 )
 const imageContainer = css(
-	{ backgroundImage: `url(${walking})`
-	, backgroundPosition: '0% center'
+	{ backgroundImage: `url(${journey})`
+	, backgroundPosition: 'center 40%'
 	, backgroundRepeat: 'no-repeat'
 	, backgroundSize: 'cover'
 	,	height: '50vh'
