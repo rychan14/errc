@@ -8,8 +8,7 @@
     "start": "node dist/backend/server.js",
     "build": "webpack",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --content-base dist/public",
-		"install": "npm i"
+    "dev": "webpack-dev-server --content-base dist/public"
   },
   "author": "Ryan Chan",
   "license": "ISC",
