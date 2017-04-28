@@ -98,7 +98,7 @@ const common =
 
 const backend =
   { name: 'backend'
-  , entry: [ 'babel-polyfill', './backend/server.js' ]
+  , entry: [ 'babel-polyfill', './server.js' ]
   , output:
     { filename: 'server.js'
     }
