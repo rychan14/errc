@@ -25,7 +25,7 @@ const countdownContainer = css(
 	, padding: '20px'
 	,	position: 'absolute'
 	, textAlign: 'center'
-	, top: '10%'
+	, top: '80%'
 	, transform: 'translateX(-50%)'
 	, width: '80%'
 	, '@media(max-width: 667px)':

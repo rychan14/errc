@@ -66,7 +66,7 @@ const common =
         , use:
           [ { loader: 'file-loader'
             , options:
-              { name: '[name].[ext]'
+              { name: 'assets/[name].[ext]'
               }
             }
           ]
