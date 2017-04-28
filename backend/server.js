@@ -5,7 +5,7 @@ import compress from 'koa-compress'
 
 const app = new Koa()
 const router = new Router()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 9000
 
 router.get('/(.*)', async (ctx, next) => {
   await send(ctx, 'index.html', {root: 'dist/public/'})

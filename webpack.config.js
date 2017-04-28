@@ -100,9 +100,7 @@ const backend =
   { name: 'backend'
   , entry: [ 'babel-polyfill', './backend/server.js' ]
   , output:
-    { path: path.join(__dirname, 'dist/backend')
-    , publicPath: 'backend/'
-    , filename: 'server.js'
+    { filename: 'server.js'
     }
   , externals: nodeModules
   , target: 'node'
