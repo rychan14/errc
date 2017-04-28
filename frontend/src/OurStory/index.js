@@ -6,7 +6,7 @@ import {
 	cover,
 	overlay
 } from 'src'
-import journey from 'assets/journey.jpg'
+import journey from 'assets/Optimized-journey.jpg'
 import NavBar from 'src/NavBar'
 
 const ourStory = css(
