@@ -98,9 +98,11 @@ const common =
 
 const backend =
   { name: 'backend'
-  , entry: [ 'babel-polyfill', './server.js' ]
+  , entry: [ 'babel-polyfill', './backend/server.js' ]
   , output:
-    { filename: 'server.js'
+    { path: path.join(__dirname, 'dist/backend')
+    , publicPath: 'backend/'
+    , filename: 'server.js'
     }
   , externals: nodeModules
   , target: 'node'
